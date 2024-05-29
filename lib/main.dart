@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:i18n_extension/i18n_extension.dart';
+import 'package:myapp/Utilis.dart';
 import 'home_screen.dart';
 
-void main() {
-  runApp(I18n(initialLocale: const Locale('hi', 'IN'), child: const MyApp()));
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+ var initialLocale = await Utilis.getLocale();
+  runApp(
+    I18n(
+      initialLocale: initialLocale,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

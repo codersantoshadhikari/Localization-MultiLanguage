@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/language.i18n.dart';
+import 'package:myapp/language_screen.dart';
 
 import 'main.dart';
 
@@ -26,6 +27,17 @@ class MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Nepal Info'.i18n),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LanguageScreen(),
+                    ));
+              },
+              icon: const Icon(Icons.language))
+        ],
         // actions: [
         //   DropdownButton<Locale>(
         //     value: _locale,
