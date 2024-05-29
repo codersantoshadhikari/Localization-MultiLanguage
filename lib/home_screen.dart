@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i18n_extension/default.i18n.dart';
+import 'package:myapp/core/language.i18n.dart';
 
 import 'main.dart';
 
@@ -17,7 +17,7 @@ class MyHomePageState extends State<MyHomePage> {
     setState(() {
       _locale = locale;
       // Change the app locale
-      MyApp.setLocale(context, _locale);
+      // MyApp.setLocale(context, _locale);
     });
   }
 
@@ -26,39 +26,39 @@ class MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Nepal Info'.i18n),
-        actions: [
-          DropdownButton<Locale>(
-            value: _locale,
-            icon: const Icon(Icons.language),
-            onChanged: (Locale? newLocale) {
-              if (newLocale != null) {
-                _changeLanguage(newLocale);
-              }
-            },
-            items: const [
-              DropdownMenuItem(
-                value: Locale('en', 'US'),
-                child: Text('English'),
-              ),
-              DropdownMenuItem(
-                value: Locale('hi', 'IN'),
-                child: Text('हिंदी'),
-              ),
-              DropdownMenuItem(
-                value: Locale('es', 'ES'),
-                child: Text('Español'),
-              ),
-              DropdownMenuItem(
-                value: Locale('ja', 'JP'),
-                child: Text('日本語'),
-              ),
-              DropdownMenuItem(
-                value: Locale('pt', 'PT'),
-                child: Text('Português'),
-              ),
-            ],
-          ),
-        ],
+        // actions: [
+        //   DropdownButton<Locale>(
+        //     value: _locale,
+        //     icon: const Icon(Icons.language),
+        //     onChanged: (Locale? newLocale) {
+        //       if (newLocale != null) {
+        //         _changeLanguage(newLocale);
+        //       }
+        //     },
+        //     items: const [
+        //       DropdownMenuItem(
+        //         value: Locale('en', 'US'),
+        //         child: Text('English'),
+        //       ),
+        //       DropdownMenuItem(
+        //         value: Locale('hi', 'IN'),
+        //         child: Text('हिंदी'),
+        //       ),
+        //       DropdownMenuItem(
+        //         value: Locale('es', 'ES'),
+        //         child: Text('Español'),
+        //       ),
+        //       DropdownMenuItem(
+        //         value: Locale('ja', 'JP'),
+        //         child: Text('日本語'),
+        //       ),
+        //       DropdownMenuItem(
+        //         value: Locale('pt', 'PT'),
+        //         child: Text('Português'),
+        //       ),
+        //     ],
+        //   ),
+        // ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),

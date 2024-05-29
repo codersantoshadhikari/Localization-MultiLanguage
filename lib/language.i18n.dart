@@ -1,7 +1,8 @@
 import 'package:i18n_extension/i18n_extension.dart';
 
 extension Localization on String {
-  static final _t = Translations.byLocale("en_US") +
+  static final _t = Translations.byText('en_us') +
+
       {
         "en_US": "Nepal Info",
         "hi_IN": "नेपाल जानकारी",
